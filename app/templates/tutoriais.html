@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    
+  <li class="nav-item ">
+      <a class="nav-link" href="dashboard">
+          <i class="material-icons">dashboard</i>
+          <p>Dashboard</p>
+      </a>
+  </li>
+  <li class="nav-item active">
+      <a class="nav-link" href="tutoriais">
+          <i class="material-icons">video_library</i>
+          <p>Tutoriais</p>
+      </a>
+  </li>
+
+{% endblock %}
+
+{% block nav_brand %}
+  <a class="navbar-brand">Tutoriais - Systemas Dashboard</a>
+{% endblock %}
+
+
+{% block content %}
+
+ <li> 
+    <a href="#" type="video/mp4">Ferramentas de Diagnóstico Nutricional</a>
+ </li>
+ <li> 
+    <a href="#" type="video/mp4">NRS 2002</a>
+ </li>
+ <li> 
+    <a href="#" type="video/mp4">Strong Kids</a>
+ </li>
+
+{% endblock %}

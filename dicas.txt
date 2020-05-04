@@ -1,0 +1,8 @@
+
+* Criar o Venv:
+    python -m venv venv
+* Pacotes exigidos:  
+    pip install -r requirements.txt 
+		
+
+

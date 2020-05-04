@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    
+  <li class="nav-item active">
+      <a class="nav-link" href="dashboard">
+          <i class="material-icons">dashboard</i>
+          <p>Dashboard</p>
+      </a>
+  </li>
+  <li class="nav-item ">
+      <a class="nav-link" href="tutoriais">
+          <i class="material-icons">video_library</i>
+          <p>Tutoriais</p>
+      </a>
+  </li>
+
+{% endblock %}
+
+{% block nav_brand %}
+  <a class="navbar-brand">Dashboard - Systemas Dashboard</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+
+    <h4> {{hospital}} </h4>
+
+    {% for hospital in hospitais %}
+
+      <div class="col-xl-4 col-lg-12">
+        <div class="card">
+          <div class="card-header card-header-warning" style='height: 4rem;'>
+            <h4 class="card-title">{{hospital.nomehospital}}</h4>
+          </div>
+          <div class="card-body">
+
+            <table class="table">
+
+              {% for s in ['ESTATISTICAS NUTRIÇÃO','ESTATISTICAS ENFERMAGEM','ESTADO NUTRICIONAL'] %}
+
+                <tr>
+                    <td>
+                       {{s}}
+                    </td>
+                    <td>
+                        
+                      {% if s in 'ESTATISTICAS NUTRIÇÃO' %}
+
+                        {% for item in sum_nutricao %}
+                          {%  if item[0] == hospital.id %}
+                            {{ 'ERROS = ' ~ sum_nutricao[item] }}<br>
+                          {% endif %}
+                        {% endfor %}
+
+                      {% elif s in 'ESTATISTICAS ENFERMAGEM' %}
+
+                        {% for item in sum_enfermagem %}
+                          {%  if item[0] == hospital.id %}
+                            {{ 'ERROS = ' ~ sum_enfermagem[item] }}<br>
+                          {% endif %}
+                        {% endfor %}
+
+                      {% elif s in 'ESTADO NUTRICIONAL' %}
+
+                        {% for item in sum_estadonutricional %}
+                          {%  if item[0] == hospital.id %}
+                            {{ item[1] ~ ' = ' ~ sum_estadonutricional[item] }}<br>
+                          {% endif %}
+                        {% endfor %}
+
+                      {% endif %}
+
+                    </td>
+
+                </tr>
+ 
+              {% endfor %}
+
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endblock %}
