@@ -1,6 +1,4 @@
-┌──────────────────────────────────────────────────────────────────────────┐
 ### myDashboard - Sample of my Dashboard in Python (JR0s1v4n - outubro/2019)
-└──────────────────────────────────────────────────────────────────────────┘
 
 Este projeto é de aprendizagem. Foi a base para o Dashboard da Empresa.
 
